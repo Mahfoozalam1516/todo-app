@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Tasks from "./components/Tasks/Tasks";
 
 const DUMMY_TASK= [
  {
@@ -33,7 +34,6 @@ const [task, setTask] = useState(DUMMY_TASK);
 
   return (
     <div className="App">
-      
       <Tasks tasks={task}/>
     </div>
   );
