@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Tasks from "./components/Tasks/Tasks";
+import NewTask from "./components/NewTask/NewTask";
 
 const DUMMY_TASK= [
  {
@@ -31,9 +32,16 @@ const DUMMY_TASK= [
 function App(){
 const [task, setTask] = useState(DUMMY_TASK);
 
+const addTaskHandler = (task) => {
+  setTask((prevTask) => {
+    return [task, ...prevTask];
+  });
+};
+
 
   return (
     <div className="App">
+      <NewTask onAddTask={addTaskHandler} />
       <Tasks tasks={task}/>
     </div>
   );
